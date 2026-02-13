@@ -29,6 +29,16 @@ public class VendingMachine {
         if (choice >= 1 && choice <= snacks.length) {
             System.out.println("You selected: " + snacks[choice - 1]);
             System.out.println("That will cost $" + prices[choice - 1]);
+
+            //insert money only 1$ bills
+            System.out.print("How many $1 bills will you insert? ");
+            int bills = scanner.nextInt();
+            double moneyInserted = bills;
+
+            //calculate change 
+            double change = moneyInserted - prices[choice - 1];
+            System.out.println("Your change is: $" + change);
+
         } else {
             System.out.println("Invalid selection. Please restart and try again.");
         }
